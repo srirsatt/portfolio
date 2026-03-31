@@ -18,3 +18,18 @@ body {
   color: var(--foreground);
   font-family: var(--font-space-mono), monospace;
 }
+
+@keyframes subtle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-2px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.hover-bounce:hover {
+  animation: subtle-bounce 0.6s infinite;
+}
