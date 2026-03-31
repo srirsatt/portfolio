@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Fun() {
+export default function Music() {
     return (
         <div className="min-h-screen flex items-center pl-[35vw] py-20">
             <div className="relative text-left max-w-md w-full">
@@ -10,7 +10,7 @@ export default function Fun() {
                 >
                     ← back
                 </Link>
-                <h1 className="font-[var(--font-space-mono)] font-bold text-lg mb-4">fun</h1>
+                <h1 className="font-[var(--font-space-mono)] font-bold text-lg mb-4">music</h1>
                 <div className="space-y-6 font-[var(--font-space-mono)] text-sm">
                     <p className="text-gray-400 italic">nothing here ... yet. coming soon.</p>
                 </div>
