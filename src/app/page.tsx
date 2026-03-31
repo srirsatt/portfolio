@@ -108,8 +108,8 @@ export default function Home() {
   const { displayText, scrambleTo, reset } = useScramble();
 
   return (
-    <div className="h-screen pt-[35vh] pl-[35vw]">
-      <div className="text-left max-w-md">
+    <div className="min-h-screen flex items-center justify-center p-8 sm:p-12">
+      <div className="w-full max-w-md text-left">
         <h1 className="font-[var(--font-space-mono)] font-bold text-lg whitespace-pre">
           {displayText}
         </h1>
