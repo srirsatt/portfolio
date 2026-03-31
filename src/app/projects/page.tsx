@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function Projects() {
   return (
-    <div className="h-screen pt-[35vh] pl-[35vw]">
-      <div className="text-left max-w-md">
+    <div className="min-h-screen flex items-center pl-[35vw] py-20">
+      <div className="relative text-left max-w-md w-full">
         <Link
           href="/"
-          className="font-[var(--font-space-mono)] text-sm text-gray-400 hover:text-black transition-colors w-fit mb-8 block"
+          className="absolute -top-12 left-0 font-[var(--font-space-mono)] text-sm text-gray-400 hover:text-black transition-colors"
         >
           ← back
         </Link>
@@ -74,7 +74,7 @@ export default function Projects() {
               ANN vs. KAN for EEG-Alzheimer's Inference
             </a>
             <span className="text-gray-500 flex-1">
-              a comprehensive comparison of ANNs and KANs for classification of Alzheimer's from EEG data. (IEEE MIT URTC 2024)
+              a comprehensive comparison of ANNs and KANs for classification of Alzheimer's from EEG data.
             </span>
           </div>
         </div>

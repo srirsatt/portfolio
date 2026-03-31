@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function Fun() {
     return (
-        <div className="h-screen pt-[35vh] pl-[35vw]">
-            <div className="text-left max-w-md">
+        <div className="min-h-screen flex items-center pl-[35vw] py-20">
+            <div className="relative text-left max-w-md w-full">
                 <Link
                     href="/"
-                    className="font-[var(--font-space-mono)] text-sm text-gray-400 hover:text-black transition-colors underline w-fit mb-8 block"
+                    className="absolute -top-12 left-0 font-[var(--font-space-mono)] text-sm text-gray-400 hover:text-black transition-colors"
                 >
                     ← back
                 </Link>
