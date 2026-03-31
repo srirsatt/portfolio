@@ -143,6 +143,7 @@ export default function Home() {
         <div className="flex space-x-5 mt-5 font-[var(--font-space-mono)] text-sm">
           <a href="/essays" className="underline text-gray-400 hover:text-black transition-colors hover-bounce">essays</a>
           <a href="/projects" className="underline text-gray-400 hover:text-black transition-colors hover-bounce">projects</a>
+          <a href="/fun" className="underline text-gray-400 hover:text-black transition-colors hover-bounce">fun</a>
         </div>
         <LocalTime />
       </div>
