@@ -66,7 +66,7 @@ export default function Projects() {
           </div>
           <div className="flex items-start">
             <a
-              href="/pdfs/MIT_URTC_ANN_vs_KAN_EEG.pdf"
+              href="https://ieeexplore.ieee.org/document/10937564"
               target="_blank"
               rel="noopener noreferrer"
               className="w-[45%] shrink-0 pr-4 text-gray-800 hover:text-gray-400 transition-colors underline"
