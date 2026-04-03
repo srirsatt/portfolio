@@ -53,7 +53,7 @@ export default function Projects() {
           */}
           <div className="flex items-start">
             <a
-              href="/pdfs/IEEESMCFINAL.pdf"
+              href="https://arxiv.org/abs/2604.01653"
               target="_blank"
               rel="noopener noreferrer"
               className="w-[45%] shrink-0 pr-4 text-gray-800 hover:text-gray-400 transition-colors underline"
