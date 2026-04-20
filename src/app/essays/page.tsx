@@ -14,6 +14,17 @@ export default function Essays() {
         <div className="space-y-4 font-[var(--font-space-mono)] text-sm">
           <div className="flex items-start">
             <Link
+              href="/essays/bevofit-devlog"
+              className="w-[45%] shrink-0 pr-4 text-gray-800 hover:text-gray-400 transition-colors underline"
+            >
+              bevofit - devlog 1
+            </Link>
+            <span className="text-gray-500 flex-1">
+              look #1 into the dev process of bevofit (not much dev this week...)
+            </span>
+          </div>
+          <div className="flex items-start">
+            <Link
               href="/essays/hello-world"
               className="w-[45%] shrink-0 pr-4 text-gray-800 hover:text-gray-400 transition-colors underline"
             >
