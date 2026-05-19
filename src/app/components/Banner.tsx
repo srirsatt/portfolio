@@ -42,12 +42,13 @@ export default function Banner() {
   return (
     <div className="fixed top-0 left-0 w-full text-center pt-3 text-sm z-10 cursor-pointer">
       <span ref={textRef} onMouseEnter={handleMouseEnter} className="inline-block">
-        will be attending{" "}
-        <a href="https://events.ycombinator.com/startup-school-2026" className="font-bold">
+        <a href="https://events.ycombinator.com/startup-school-2026" target="_blank">
+          will be attending{" "}
+
           <SiYcombinator style={{ color: "#F26522", display: "inline-block", verticalAlign: "-0.2em" }} size={16} />
-          {" "}Startup School
+          {" "}<span className="font-bold">Startup School</span>
+          {" "}— connect with me if you&apos;re also going!
         </a>
-        {" "}— connect with me if you&apos;re also going!
       </span>
     </div>
   );
