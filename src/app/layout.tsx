@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Space_Mono } from "next/font/google";
+import Banner from "./components/Banner";
 import "./globals.css";
 
 const spaceMono = Space_Mono({
@@ -35,7 +36,10 @@ export default function RootLayout({
       lang="en"
       className={`${spaceMono.variable} ${spaceMono.className} antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Banner />
+        {children}
+      </body>
     </html>
   );
 }

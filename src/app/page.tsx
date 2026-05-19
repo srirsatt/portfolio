@@ -37,34 +37,34 @@ function LocalTime() {
 }
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@._-";
 
+type DisplayChar = { char: string; scrambling: boolean };
+
 function useScramble() {
-  const [displayText, setDisplayText] = useState(ORIGINAL_NAME);
+  const [displayChars, setDisplayChars] = useState<DisplayChar[]>(
+    ORIGINAL_NAME.split("").map((char) => ({ char, scrambling: false }))
+  );
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const scrambleTo = useCallback((target: string) => {
     if (intervalRef.current) clearInterval(intervalRef.current);
 
-    // Pad target to match length for smoother effect
     const padded = target.padEnd(ORIGINAL_NAME.length);
     let iteration = 0;
 
     intervalRef.current = setInterval(() => {
-      setDisplayText(
-        padded
-          .split("")
-          .map((char, i) => {
-            if (i < iteration) return padded[i];
-            if (char === " ") return " ";
-            return CHARS[Math.floor(Math.random() * CHARS.length)];
-          })
-          .join("")
+      setDisplayChars(
+        padded.split("").map((char, i) => {
+          if (i < iteration) return { char: padded[i], scrambling: false };
+          if (char === " ") return { char: " ", scrambling: false };
+          return { char: CHARS[Math.floor(Math.random() * CHARS.length)], scrambling: true };
+        })
       );
 
       iteration += 1;
 
       if (iteration > padded.length) {
         if (intervalRef.current) clearInterval(intervalRef.current);
-        setDisplayText(target);
+        setDisplayChars(target.split("").map((char) => ({ char, scrambling: false })));
       }
     }, 30);
   }, []);
@@ -73,7 +73,7 @@ function useScramble() {
     scrambleTo(ORIGINAL_NAME);
   }, [scrambleTo]);
 
-  return { displayText, scrambleTo, reset };
+  return { displayChars, scrambleTo, reset };
 }
 
 const socials = [
@@ -105,13 +105,20 @@ const socials = [
 ];
 
 export default function Home() {
-  const { displayText, scrambleTo, reset } = useScramble();
+  const { displayChars, scrambleTo, reset } = useScramble();
 
   return (
     <div className="min-h-screen flex items-center justify-center p-8 sm:p-12">
       <div className="w-full max-w-md text-left">
         <h1 className="font-[var(--font-space-mono)] font-bold text-lg whitespace-pre">
-          {displayText}
+          {displayChars.map((item, i) => (
+            <span
+              key={i}
+              style={{ color: "inherit" }}
+            >
+              {item.char}
+            </span>
+          ))}
         </h1>
         <div className="flex space-x-5 my-4">
           {socials.map((social) => (
@@ -132,7 +139,7 @@ export default function Home() {
           className="font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed"
           style={{ wordSpacing: "-3px" }}
         >
-          currently building with LLMs, ML, GPUs, and end-to-end systems.
+          currently building with LLMs, ML, GPUs, and production systems.
         </p>
         <p
           className="font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed mt-4"
