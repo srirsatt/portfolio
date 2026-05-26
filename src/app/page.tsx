@@ -99,8 +99,8 @@ const socials = [
   },
   {
     icon: MdEmail,
-    href: "mailto:sriramsattiraju07@gmail.com",
-    label: "sriramsattiraju07@gmail.com",
+    href: "mailto:srirams@cs.utexas.edu",
+    label: "srirams@cs.utexas.edu",
   },
 ];
 
@@ -139,18 +139,25 @@ export default function Home() {
           className="font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed"
           style={{ wordSpacing: "-3px" }}
         >
-          currently building with LLMs, ML, GPUs, and production systems.
+          building with LLMs, CUAs, GPUs, and machine learning in production.
         </p>
-        <p
-          className="font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed mt-4"
+        <div
+          className="mt-4 flex flex-col gap-1 font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed"
           style={{ wordSpacing: "-3px" }}
         >
-          student @ UT CS. feel free to reach out anytime.
-        </p>
-        <div className="flex space-x-5 mt-5 font-[var(--font-space-mono)] text-sm">
-          <a href="/projects" className="underline text-gray-400 hover:text-black transition-colors hover-bounce">projects</a>
-          <a href="/essays" className="underline text-gray-400 hover:text-black transition-colors hover-bounce">essays</a>
-          <a href="/music" className="underline text-gray-400 hover:text-black transition-colors hover-bounce">music</a>
+          <p>
+            contact:{" "}
+            <a href="mailto:srirams@cs.utexas.edu" className="hover:underline hover:text-black">
+              srirams@cs.utexas.edu
+            </a>
+          </p>
+        </div>
+        <div
+          className="mt-4 flex gap-5 font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed"
+          style={{ wordSpacing: "-3px" }}
+        >
+          <a href="/projects" className="text-[#4A4AFF] transition-colors hover-bounce hover:underline">my work</a>
+          <a href="/essays" className="text-[#4A4AFF] transition-colors hover-bounce hover:underline">my essays</a>
         </div>
         <LocalTime />
       </div>
