@@ -26,6 +26,8 @@ function LocalTime() {
     return () => clearInterval(interval);
   }, []);
 
+  
+
   return (
     <div className="flex items-center space-x-2 mt-5 text-gray-400 font-[var(--font-space-mono)] text-xs">
       <MdLanguage size={14} />
@@ -127,7 +129,7 @@ export default function Home() {
               href={social.href}
               target={social.href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-gray-700 transition-colors"
+              className="text-gray-400 hover:text-black transition-colors"
               onMouseEnter={() => social.label !== ORIGINAL_NAME && scrambleTo(social.label)}
               onMouseLeave={reset}
             >
@@ -139,7 +141,7 @@ export default function Home() {
           className="font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed"
           style={{ wordSpacing: "-3px" }}
         >
-          building with LLMs, CUAs, GPUs, and machine learning in production.
+          building with cool tech :). interested in CUDA & LLMs.
         </p>
         <div
           className="mt-4 flex flex-col gap-1 font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed"
@@ -147,17 +149,19 @@ export default function Home() {
         >
           <p>
             contact:{" "}
-            <a href="mailto:srirams@cs.utexas.edu" className="hover:underline hover:text-black">
+            <a href="mailto:srirams@cs.utexas.edu" className="underline hover:text-black">
               srirams@cs.utexas.edu
             </a>
+            
           </p>
         </div>
         <div
-          className="mt-4 flex gap-5 font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed"
+          className="mt-4 flex flex-col gap-2 font-[var(--font-space-mono)] text-sm tracking-tight leading-relaxed"
           style={{ wordSpacing: "-3px" }}
         >
-          <a href="/projects" className="text-[#4A4AFF] transition-colors hover-bounce hover:underline">my work</a>
-          <a href="/essays" className="text-[#4A4AFF] transition-colors hover-bounce hover:underline">my essays</a>
+          <a href="/projects" className="group text-black font-bold transition-colors">projects <span className="ml-[1px] inline-block text-[11px] transition-transform duration-150 ease-out group-hover:translate-x-1">→</span>
+          </a>
+          <a href="/blog" className="group text-black font-bold transition-colors">blog <span className="ml-[1px] inline-block text-[11px] transition-transform duration-150 ease-out group-hover:translate-x-1">→</span></a>
         </div>
         <LocalTime />
       </div>

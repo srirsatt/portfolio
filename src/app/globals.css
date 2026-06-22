@@ -43,6 +43,18 @@ body {
   }
 }
 
+@keyframes arrow-nudge {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .hover-bounce:hover {
   animation: subtle-bounce 0.4s ease-out;
 }

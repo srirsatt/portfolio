@@ -10,7 +10,7 @@ export default function Projects() {
         >
           ← back
         </Link>
-        <h1 className="font-[var(--font-space-mono)] font-bold text-lg mb-4">work</h1>
+        <h1 className="font-[var(--font-space-mono)] font-bold text-lg mb-4">projects</h1>
         <div className="space-y-4 font-[var(--font-space-mono)] text-sm">
           {/* 
             To add a new project, copy one of the <div> blocks below 

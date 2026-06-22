@@ -5,7 +5,7 @@ export default function HelloWorld() {
     <div className="min-h-screen flex items-center justify-center p-8 sm:p-12">
       <div className="relative w-full max-w-md text-left">
         <Link
-          href="/essays"
+          href="/blog"
           className="absolute -top-12 left-0 font-[var(--font-space-mono)] text-sm text-gray-400 hover:text-black transition-colors"
         >
           ← back
