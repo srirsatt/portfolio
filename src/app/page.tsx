@@ -148,7 +148,6 @@ export default function Home() {
           style={{ wordSpacing: "-3px" }}
         >
           <p>
-            contact:{" "}
             <a href="mailto:srirams@cs.utexas.edu" className="underline hover:text-black">
               srirams@cs.utexas.edu
             </a>
