@@ -1,60 +1,285 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "NType82 Regular";
+  src: url("https://cdn.shopify.com/oxygen-v2/43495/38485/80939/4205444/fonts/NType82-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+  --font-space-mono: var(--font-ibm-plex-mono);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-space-mono);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-ibm-plex-mono);
+  --font-mono: var(--font-ibm-plex-mono);
 }
-
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-space-mono), monospace;
+  font-family: var(--font-ibm-plex-mono), monospace;
 }
 
-@keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
+.minimal-home {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  overflow: hidden;
+  place-items: center;
+  background: #ffffff;
+  color: #000000;
+}
+
+.launch-wave {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  pointer-events: none;
+}
+
+.minimal-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 15px;
+  justify-items: center;
+  row-gap: 9px;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  z-index: 10;
+}
+
+.minimal-nav a {
+  display: block;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28em;
+  transition: opacity 150ms ease;
+}
+
+.minimal-nav a:hover,
+.minimal-nav a:focus-visible {
+  opacity: 0.42;
+}
+
+.identity {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
+}
+
+.minimal-name {
+  min-height: 1em;
+  margin: 0;
+  font-family: "NType82 Regular", "Times New Roman", Times, serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+}
+
+.identity-subtitle {
+  margin-top: 10px;
+  color: #6b7280;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.social-links {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  gap: 12px;
+  color: #9ca3af;
+}
+
+.social-links a {
+  display: grid;
+  place-items: center;
+  transition: color 150ms ease;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  color: #000000;
+}
+
+@media (max-width: 420px) {
+  .minimal-nav {
+    row-gap: 9px;
+    font-size: 0.72rem;
   }
-  50% {
-    transform: translateY(-4px);
+
+  .minimal-name {
+    font-size: 30px;
   }
 }
 
-.wave-char {
-  display: inline-block;
+.builds-page {
+  min-height: 100svh;
+  padding: 7rem clamp(1.5rem, 6vw, 5rem);
+  background: #fff;
+  color: #0a0a0a;
+  font-family: var(--font-ibm-plex-mono), monospace;
 }
 
-@keyframes subtle-bounce {
-  0%, 100% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(-2px);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
+.builds-shell {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  transform: translateX(clamp(2rem, 4.5vw, 4rem));
 }
 
-@keyframes arrow-nudge {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(4px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.builds-back {
+  position: absolute;
+  top: -3.5rem;
+  left: 0;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  transition: color 150ms ease;
 }
 
-.hover-bounce:hover {
-  animation: subtle-bounce 0.4s ease-out;
+.builds-back:hover,
+.builds-back:focus-visible {
+  color: #0a0a0a;
+}
+
+.builds-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.builds-list {
+  display: flex;
+  margin-top: 2.25rem;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.build-row {
+  display: grid;
+  grid-template-columns: minmax(135px, 0.72fr) minmax(210px, 1fr) minmax(260px, 1.45fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.build-name {
+  align-self: start;
+  padding-top: 0.2rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.build-name a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: opacity 150ms ease;
+}
+
+.build-name a:hover,
+.build-name a:focus-visible {
+  opacity: 0.45;
+}
+
+.build-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background: #fafafa;
+}
+
+.build-media img,
+.build-media object {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 220ms ease;
+}
+
+.build-media object {
+  width: calc(100% + 18px);
+  pointer-events: none;
+}
+
+.build-media:hover img {
+  transform: scale(1.02);
+}
+
+.build-details {
+  align-self: center;
+}
+
+.build-details p {
+  max-width: 33rem;
+  color: #6b7280;
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.build-stack {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  gap: 0.8rem;
+  color: #9ca3af;
+}
+
+.build-stack span {
+  display: grid;
+  cursor: help;
+  place-items: center;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 760px) {
+  .builds-page {
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .build-row {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .builds-shell {
+    transform: none;
+  }
+
+  .builds-list {
+    gap: 3rem;
+  }
+
+  .build-media {
+    width: 100%;
+    height: auto;
+  }
+
+  .build-name {
+    padding-top: 0;
+  }
 }

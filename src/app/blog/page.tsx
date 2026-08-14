@@ -10,7 +10,7 @@ export default function Essays() {
         >
           ← back
         </Link>
-        <h1 className="font-[var(--font-space-mono)] font-bold text-lg mb-4">blog</h1>
+        <h1 className="font-[var(--font-ibm-plex-mono)] font-bold text-lg mb-4">BLOG</h1>
         <div className="space-y-4 font-[var(--font-space-mono)] text-sm">
           {/*
           <div className="flex items-start">

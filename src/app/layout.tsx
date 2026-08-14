@@ -1,24 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Space_Mono } from "next/font/google";
-import Banner from "./components/Banner";
+import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const spaceMono = Space_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-space-mono",
-});
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-ibm-plex-mono",
 });
 
 export const metadata: Metadata = {
@@ -34,10 +21,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceMono.variable} ${spaceMono.className} antialiased`}
+      className={`${ibmPlexMono.variable} ${ibmPlexMono.className} antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Banner />
         {children}
       </body>
     </html>
