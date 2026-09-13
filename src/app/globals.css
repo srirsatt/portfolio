@@ -250,6 +250,19 @@ body {
   font-size: 1.05rem;
 }
 
+.build-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.build-links a:hover,
+.build-links a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 @media (max-width: 760px) {
   .builds-page {
     padding: 6rem 1.5rem 4rem;

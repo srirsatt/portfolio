@@ -63,6 +63,10 @@ const builds = [
   },
   {
     name: "Cognitive Energy Modeling",
+    links: [
+      { label: "Paper", href: "https://arxiv.org/abs/2604.01653" },
+      { label: "Code", href: "https://github.com/Vaibhav100968/Cognitive-Transport-Index" },
+    ],
     href: "https://arxiv.org/abs/2604.01653",
     image: "https://arxiv.org/html/2604.01653v2/system_integration.png",
     imageAlt: "Closed-loop neuroadaptive system using EEG-derived cognitive energy",
@@ -76,6 +80,10 @@ const builds = [
   },
   {
     name: "ANN vs. KAN for EEG-Alzheimer's Inference",
+    links: [
+      { label: "Paper", href: "https://ieeexplore.ieee.org/document/10937564" },
+      { label: "Code", href: "https://github.com/srirsatt/Comparison-of-ANN-vs.-KAN-Models-for-Alzheimer-s-Diagnosis-from-EEG" },
+    ],
     href: "https://ieeexplore.ieee.org/document/10937564",
     image: "/images/ann-kan-fig1.jpg",
     imageAlt: "KAN loss surfaces across four learning rates, node counts, and training epochs",
@@ -147,6 +155,15 @@ export default function Builds() {
                     </span>
                   ))}
                 </div>
+                {build.links && (
+                  <div className="build-links">
+                    {build.links.map((link) => (
+                      <a key={link.label} href={link.href} aria-label={`${build.name} ${link.label}`}>
+                        [{link.label}]
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </article>
           ))}
