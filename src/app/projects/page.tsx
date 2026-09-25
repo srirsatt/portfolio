@@ -1,3 +1,4 @@
+import ThingsNav from "../components/ThingsNav";
 import Link from "next/link";
 import {
   SiCplusplus,
@@ -23,16 +24,14 @@ import {
 
 const builds = [
   {
-    name: "Source",
-    href: "https://github.com/srirsatt/Source",
-    image: "https://raw.githubusercontent.com/srirsatt/Source/main/media/sourcedemo.gif",
-    imageAlt: "Source VS Code extension indexing a documentation website",
-    description: "A VS Code extension that crawls and indexes documentation, then exposes grounded search to coding agents through MCP.",
+    name: "TinyCUDATensor",
+    href: "https://github.com/srirsatt/SimpleTensor",
+    image: "/images/simpletensor-autograd.png",
+    imageAlt: "SimpleTensor autograd graph: forward pass builds a GradNode at each op, backward() walks it in reverse",
+    description: "A tensor library built from scratch in CUDA C++, with a PyTorch-style autograd engine and both naive and tiled shared-memory matmul kernels.",
     stack: [
-      { icon: SiTypescript, label: "TypeScript", color: "#3178c6" },
-      { icon: SiJavascript, label: "JavaScript", color: "#d6b600" },
-      { icon: SiNodedotjs, label: "Node.js", color: "#339933" },
-      { icon: SiModelcontextprotocol, label: "Model Context Protocol", color: "#111111" },
+      { icon: SiCplusplus, label: "C++", color: "#00599c" },
+      { icon: SiNvidia, label: "CUDA", color: "#76b900" },
     ],
   },
   {
@@ -51,14 +50,16 @@ const builds = [
     ],
   },
   {
-    name: "SimpleTensor",
-    href: "https://github.com/srirsatt/SimpleTensor",
-    image: "/images/simpletensor-autograd.png",
-    imageAlt: "SimpleTensor autograd graph: forward pass builds a GradNode at each op, backward() walks it in reverse",
-    description: "A tensor library built from scratch in CUDA C++, with a PyTorch-style autograd engine and both naive and tiled shared-memory matmul kernels.",
+    name: "Source",
+    href: "https://github.com/srirsatt/Source",
+    image: "https://raw.githubusercontent.com/srirsatt/Source/main/media/sourcedemo.gif",
+    imageAlt: "Source VS Code extension indexing a documentation website",
+    description: "A VS Code extension that crawls and indexes documentation, then exposes grounded search to coding agents through MCP.",
     stack: [
-      { icon: SiCplusplus, label: "C++", color: "#00599c" },
-      { icon: SiNvidia, label: "CUDA", color: "#76b900" },
+      { icon: SiTypescript, label: "TypeScript", color: "#3178c6" },
+      { icon: SiJavascript, label: "JavaScript", color: "#d6b600" },
+      { icon: SiNodedotjs, label: "Node.js", color: "#339933" },
+      { icon: SiModelcontextprotocol, label: "Model Context Protocol", color: "#111111" },
     ],
   },
   {
@@ -129,17 +130,14 @@ const builds = [
 export default function Builds() {
   return (
     <main className="builds-page">
+      <ThingsNav active="builds" />
       <div className="builds-shell">
         <Link href="/" className="builds-back">← back</Link>
-        <h1 className="builds-title">BUILDS</h1>
+        <h1 className="sr-only">Builds</h1>
 
         <div className="builds-list">
           {builds.map((build) => (
             <article className="build-row" key={build.name}>
-              <div className="build-name">
-                <a href={build.href} target="_blank" rel="noreferrer">{build.name}</a>
-              </div>
-
               <a className="build-media" href={build.href} target="_blank" rel="noreferrer" aria-label={`View ${build.name}`}>
                 {/* The project-owned repository assets are intentionally kept animated where available. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -147,6 +145,9 @@ export default function Builds() {
               </a>
 
               <div className="build-details">
+                <h2 className="build-name">
+                  <a href={build.href} target="_blank" rel="noreferrer">{build.name}</a>
+                </h2>
                 <p>{build.description}</p>
                 <div className="build-stack" aria-label={`${build.name} technology stack`}>
                   {build.stack.map((technology) => (

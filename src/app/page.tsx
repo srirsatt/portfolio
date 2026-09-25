@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaGoogleScholar, FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import FirstLaunchWave from "./components/FirstLaunchWave";
 
@@ -11,15 +11,13 @@ const DEFAULT_NAME = "Sriram Sattiraju";
 const SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@._-";
 
 const navigation = [
-  { label: "BLOG", href: "/blog" },
-  { label: "BUILDS", href: "/projects" },
+  { label: "OUTPUT", href: "/projects" },
 ];
 
 const socials = [
   { icon: FaGithub, href: "https://github.com/srirsatt", label: "srirsatt", name: "GitHub" },
   { icon: FaLinkedin, href: "https://www.linkedin.com/in/sriram-sattiraju-4a4514150/", label: "sriram-sattiraju", name: "LinkedIn" },
   { icon: FaXTwitter, href: "https://x.com/SattirajuSriram", label: "@SattirajuSriram", name: "X" },
-  { icon: FaGoogleScholar, href: "https://scholar.google.com/citations?user=AZf9PRMAAAAJ&hl=en", label: "Sriram Sattiraju", name: "Google Scholar" },
   { icon: MdEmail, href: "mailto:srirams@cs.utexas.edu", label: "srirams@cs.utexas.edu", name: "Email" },
 ];
 
@@ -66,11 +64,6 @@ function useScramble() {
 
 export default function Home() {
   const { text, scrambleTo } = useScramble();
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => scrambleTo(DEFAULT_NAME), 140);
-    return () => window.clearTimeout(timer);
-  }, [scrambleTo]);
 
   return (
     <main className="minimal-home">
