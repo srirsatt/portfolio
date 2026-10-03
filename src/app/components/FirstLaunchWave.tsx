@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 
 const CHARACTERS = "@#$?!abc;:+*=-,.`";
 const DURATION = 3000;
+const WAVE_COLORS = ["#c65f43", "#c99a36", "#76985c", "#4c94a6", "#9873aa"];
+const DARK_WAVE_COLORS = ["#df896d", "#d8b45c", "#9fbb84", "#80b8c8", "#b69acb"];
 
 export default function FirstLaunchWave() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -57,6 +59,12 @@ export default function FirstLaunchWave() {
       context.font = `${cellSize * 0.82}px ${fontFamily}`;
       context.textAlign = "center";
       context.textBaseline = "middle";
+      const waveColor = context.createLinearGradient(0, crest - bandWidth, width, crest + bandWidth);
+      const colors = document.documentElement.dataset.theme === "dark" ? DARK_WAVE_COLORS : WAVE_COLORS;
+      colors.forEach((color, index) => {
+        waveColor.addColorStop(index / (colors.length - 1), color);
+      });
+      context.fillStyle = waveColor;
 
       for (let y = -cellSize; y < height + cellSize; y += cellSize) {
         for (let x = -cellSize; x < width + cellSize; x += cellSize) {
@@ -76,10 +84,12 @@ export default function FirstLaunchWave() {
           const jitter = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
           if (jitter - Math.floor(jitter) > 0.9 + intensity * 0.08) continue;
 
-          context.fillStyle = `rgba(10, 10, 10, ${0.08 + intensity * 0.3})`;
+          context.globalAlpha = (0.08 + intensity * 0.63) * overallFade;
           context.fillText(CHARACTERS[characterIndex], x, y);
         }
       }
+
+      context.globalAlpha = 1;
 
       if (progress < 1) {
         animationFrame = window.requestAnimationFrame(render);

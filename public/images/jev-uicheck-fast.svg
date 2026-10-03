@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">jev-uicheck-fast</title>
+  <desc id="desc">Playwright captures the UI before and after a code change. Local browser health checks and Jev advisory checks produce a report.</desc>
+  <rect x="1" y="1" width="958" height="538" rx="20" fill="#191B1F" stroke="#34373D" stroke-width="2"/>
+  <path d="M1 64H959" stroke="#34373D" stroke-width="2"/>
+  <g fill="#626872">
+    <circle cx="32" cy="33" r="6"/>
+    <circle cx="54" cy="33" r="6"/>
+    <circle cx="76" cy="33" r="6"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="480" y="41" text-anchor="middle" fill="#A4ABB6" font-size="20">jev-uicheck-fast</text>
+    <text x="48" y="126" fill="#F1F2F4" font-size="30">Check the change.</text>
+    <text x="48" y="164" fill="#A4ABB6" font-size="21">Browser evidence for coding agents.</text>
+    <rect x="48" y="207" width="242" height="100" rx="10" fill="#22252B" stroke="#424750"/>
+    <rect x="359" y="207" width="242" height="100" rx="10" fill="#22252B" stroke="#424750"/>
+    <rect x="670" y="207" width="242" height="100" rx="10" fill="#22252B" stroke="#424750"/>
+    <text x="169" y="246" text-anchor="middle" fill="#A8C8FF" font-size="22">BEFORE</text>
+    <text x="169" y="279" text-anchor="middle" fill="#A4ABB6" font-size="18">UI snapshot</text>
+    <text x="480" y="246" text-anchor="middle" fill="#F1F2F4" font-size="22">CODE CHANGE</text>
+    <text x="480" y="279" text-anchor="middle" fill="#A4ABB6" font-size="18">Developer / agent</text>
+    <text x="791" y="246" text-anchor="middle" fill="#A8C8FF" font-size="22">AFTER</text>
+    <text x="791" y="279" text-anchor="middle" fill="#A4ABB6" font-size="18">UI snapshot</text>
+    <g stroke="#7C8592" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M306 257H342M334 249L342 257L334 265"/>
+      <path d="M617 257H653M645 249L653 257L645 265"/>
+      <path d="M169 321V341H791V321M480 341V362M472 354L480 362L488 354"/>
+    </g>
+    <rect x="48" y="379" width="864" height="108" rx="10" fill="#22252B" stroke="#424750"/>
+    <path d="M480 395V471" stroke="#424750"/>
+    <text x="76" y="419" fill="#9BD8B1" font-size="22">Browser health</text>
+    <text x="76" y="455" fill="#A4ABB6" font-size="18">Console / network / page errors</text>
+    <text x="508" y="419" fill="#CBB9F1" font-size="22">Jev advisory</text>
+    <text x="508" y="455" fill="#A4ABB6" font-size="18">Prompt intent / UI regressions</text>
+  </g>
+</svg>

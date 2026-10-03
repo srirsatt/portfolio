@@ -1,5 +1,3 @@
-import ThingsNav from "../components/ThingsNav";
-import Link from "next/link";
 import {
   SiCplusplus,
   SiExpo,
@@ -24,21 +22,11 @@ import {
 
 const builds = [
   {
-    name: "TinyCUDATensor",
-    href: "https://github.com/srirsatt/SimpleTensor",
-    image: "/images/simpletensor-autograd.png",
-    imageAlt: "SimpleTensor autograd graph: forward pass builds a GradNode at each op, backward() walks it in reverse",
-    description: "A tensor library built from scratch in CUDA C++, with a PyTorch-style autograd engine and both naive and tiled shared-memory matmul kernels.",
-    stack: [
-      { icon: SiCplusplus, label: "C++", color: "#00599c" },
-      { icon: SiNvidia, label: "CUDA", color: "#76b900" },
-    ],
-  },
-  {
     name: "BevoFit",
     href: "https://github.com/srirsatt/BevoFit",
-    image: "/images/bevofit-hero.png",
-    imageAlt: "BevoFit wordmark and app icon",
+    image: "/images/bevofit-promos.png",
+    imageAlt: "Three BevoFit promotional screenshots showing gym hours and Scan In, Gregory Gym facility details, and a campus map with directions.",
+    imageAspectRatio: "1676 / 1180",
     description: "A mobile app for UT Austin students to check live gym hours, explore facilities, and browse intramural sports.",
     stack: [
       { icon: SiReact, label: "React Native", color: "#00a8c6" },
@@ -60,6 +48,28 @@ const builds = [
       { icon: SiJavascript, label: "JavaScript", color: "#d6b600" },
       { icon: SiNodedotjs, label: "Node.js", color: "#339933" },
       { icon: SiModelcontextprotocol, label: "Model Context Protocol", color: "#111111" },
+    ],
+  },
+  {
+    name: "TinyCUDATensor",
+    href: "https://github.com/srirsatt/TinyCUDATensor",
+    image: "/images/tinycudatensor-wireframe.svg",
+    imageAlt: "Simple wireframe of TinyCUDATensor: input tensors A and B pass through tiled matrix multiplication and sum to produce a loss; backward propagates gradients back to the inputs.",
+    description: "A tensor library built from scratch in CUDA C++, with a PyTorch-style autograd engine and both naive and tiled shared-memory matmul kernels.",
+    stack: [
+      { icon: SiCplusplus, label: "C++", color: "#00599c" },
+      { icon: SiNvidia, label: "CUDA", color: "#76b900" },
+    ],
+  },
+  {
+    name: "jev-uicheck-fast",
+    href: "https://github.com/srirsatt/jev-uicheck-fast",
+    image: "/images/jev-uicheck-diff.svg",
+    imageAlt: "Before-and-after login form wireframes show a button changing from Log in to Sign in. The accessibility diff and original prompt feed Jev advisory checks for intent, unexpected changes, and regressions.",
+    description: "A UI-checking tool for coding agents that combines Playwright browser health checks with Jev evaluations of before-and-after accessibility diffs. Available as a CLI, library, and automatic Claude Code or Codex hook.",
+    stack: [
+      { icon: SiTypescript, label: "TypeScript", color: "#3178c6" },
+      { icon: SiNodedotjs, label: "Node.js", color: "#339933" },
     ],
   },
   {
@@ -130,15 +140,13 @@ const builds = [
 export default function Builds() {
   return (
     <main className="builds-page">
-      <ThingsNav active="builds" />
       <div className="builds-shell">
-        <Link href="/" className="builds-back">← back</Link>
         <h1 className="sr-only">Builds</h1>
 
         <div className="builds-list">
           {builds.map((build) => (
             <article className="build-row" key={build.name}>
-              <a className="build-media" href={build.href} target="_blank" rel="noreferrer" aria-label={`View ${build.name}`}>
+              <a className="build-media" style={{ aspectRatio: build.imageAspectRatio }} href={build.href} target="_blank" rel="noreferrer" aria-label={`View ${build.name}`}>
                 {/* The project-owned repository assets are intentionally kept animated where available. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={build.image} alt={build.imageAlt} />
@@ -151,7 +159,7 @@ export default function Builds() {
                 <p>{build.description}</p>
                 <div className="build-stack" aria-label={`${build.name} technology stack`}>
                   {build.stack.map((technology) => (
-                    <span key={technology.label} title={technology.label} aria-label={technology.label} style={{ color: technology.color }}>
+                    <span key={technology.label} title={technology.label} aria-label={technology.label} style={{ color: technology.color === "#000000" ? "var(--foreground)" : technology.color }}>
                       <technology.icon aria-hidden="true" />
                     </span>
                   ))}

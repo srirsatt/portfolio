@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Tiled matrix multiplication</title>
+  <desc id="description">Each square represents a 16 by 16 tile. To compute output tile C at row i and column j, the CUDA kernel loads matching tiles from row i of A and column j of B into shared memory, accumulating their products across k.</desc>
+  <!-- Based on TILE = 16 and tiledMatmulKernel in srirsatt/TinyCUDATensor/tensor/ops.cu. -->
+  <rect width="960" height="540" fill="#F5F4EF"/>
+  <text x="48" y="61" fill="#262A25" font-family="Georgia, 'Times New Roman', serif" font-size="34">Tiled matrix multiplication</text>
+  <path d="M48 87H912" stroke="#BFC3B8"/>
+
+  <g fill="#262A25" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-style="italic" text-anchor="middle">
+    <text x="168" y="134">A</text>
+    <text x="480" y="134">B</text>
+    <text x="792" y="134">C</text>
+  </g>
+
+  <!-- Matrices are drawn as a grid of tiles, not individual values. -->
+  <g fill="#E0E7D9">
+    <rect x="72" y="228" width="192" height="48"/>
+    <rect x="432" y="180" width="48" height="192"/>
+  </g>
+  <g fill="#65824F">
+    <rect x="168" y="228" width="48" height="48"/>
+    <rect x="432" y="276" width="48" height="48"/>
+    <rect x="744" y="228" width="48" height="48"/>
+  </g>
+  <g stroke="#B1B7AA" stroke-width="1.5">
+    <path d="M120 180V372M168 180V372M216 180V372M72 228H264M72 276H264M72 324H264"/>
+    <path d="M432 180V372M480 180V372M528 180V372M384 228H576M384 276H576M384 324H576"/>
+    <path d="M744 180V372M792 180V372M840 180V372M696 228H888M696 276H888M696 324H888"/>
+  </g>
+  <g stroke="#535B4B" stroke-width="2">
+    <rect x="72" y="180" width="192" height="192"/>
+    <rect x="384" y="180" width="192" height="192"/>
+    <rect x="696" y="180" width="192" height="192"/>
+  </g>
+
+  <g fill="#535B4B" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-style="italic" text-anchor="middle">
+    <text x="54" y="261">i</text>
+    <text x="192" y="167">k</text>
+    <text x="366" y="309">k</text>
+    <text x="456" y="167">j</text>
+    <text x="678" y="261">i</text>
+    <text x="768" y="167">j</text>
+  </g>
+  <g fill="#535B4B" font-family="Georgia, 'Times New Roman', serif" font-size="38" text-anchor="middle">
+    <text x="324" y="287">×</text>
+    <text x="636" y="287">=</text>
+  </g>
+  <g fill="#535B4B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" text-anchor="middle">
+    <text x="168" y="410">M × K</text>
+    <text x="480" y="410">K × N</text>
+    <text x="792" y="410">M × N</text>
+  </g>
+
+  <text x="480" y="465" fill="#262A25" font-family="Georgia, 'Times New Roman', serif" font-size="27" text-anchor="middle">One output tile. Accumulate across k.</text>
+  <text x="480" y="507" fill="#535B4B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="19" text-anchor="middle">16 × 16 values per tile · inputs reused in shared memory</text>
+</svg>

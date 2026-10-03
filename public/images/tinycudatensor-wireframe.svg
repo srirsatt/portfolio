@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">TinyCUDATensor computation graph</title>
+  <desc id="description">A and B feed tiledMatmul, producing C. Summing C produces a scalar loss. The backward pass propagates gradients through the graph to the inputs.</desc>
+  <rect width="960" height="540" fill="white"/>
+  <g stroke="#222" stroke-width="2" stroke-linejoin="miter">
+    <rect x="56" y="196" width="164" height="88"/>
+    <rect x="292" y="196" width="224" height="88"/>
+    <rect x="588" y="196" width="132" height="88"/>
+    <rect x="792" y="196" width="112" height="88"/>
+    <path d="M220 240H280M270 234L280 240L270 246"/>
+    <path d="M516 240H576M566 234L576 240L566 246"/>
+    <path d="M720 240H780M770 234L780 240L770 246"/>
+    <path d="M848 284V356H138V296M132 306L138 296L144 306"/>
+  </g>
+  <g fill="#222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="27" text-anchor="middle">
+    <text x="138" y="249">A, B</text>
+    <text x="404" y="249">tiledMatmul</text>
+    <text x="654" y="249">sum</text>
+    <text x="848" y="249">loss</text>
+    <text x="546" y="219" font-size="22">C</text>
+    <text x="480" y="155" font-size="22">forward</text>
+    <text x="480" y="396" font-size="22">backward()</text>
+  </g>
+</svg>

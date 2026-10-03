@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -9,10 +8,6 @@ import FirstLaunchWave from "./components/FirstLaunchWave";
 
 const DEFAULT_NAME = "Sriram Sattiraju";
 const SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@._-";
-
-const navigation = [
-  { label: "OUTPUT", href: "/projects" },
-];
 
 const socials = [
   { icon: FaGithub, href: "https://github.com/srirsatt", label: "srirsatt", name: "GitHub" },
@@ -88,11 +83,6 @@ export default function Home() {
             </a>
           ))}
         </div>
-        <nav className="minimal-nav" aria-label="Primary navigation">
-          {navigation.map((item) => (
-            <Link key={item.label} href={item.href}>{item.label}</Link>
-          ))}
-        </nav>
       </div>
     </main>
   );
