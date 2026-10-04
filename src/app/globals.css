@@ -17,7 +17,8 @@
   color-scheme: light;
   --nav-top: clamp(24px, 5svh, 48px);
   --nav-font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-  --content-top: calc(var(--nav-top) + var(--nav-font-size) * 1.4 + 2rem);
+  --nav-height: calc(var(--nav-font-size) * 1.4);
+  --content-top: calc(var(--nav-top) + var(--nav-height) + 2rem);
   --font-space-mono: var(--font-ibm-plex-mono);
 }
 
@@ -100,7 +101,7 @@ body {
 
 .theme-toggle {
   position: absolute;
-  top: calc(var(--nav-top) + var(--nav-font-size) * 0.7 - 16px);
+  top: calc(var(--nav-top) + var(--nav-height) / 2 - 16px);
   right: clamp(16px, 3vw, 40px);
   display: grid;
   width: 32px;
@@ -118,11 +119,36 @@ body {
   color: var(--foreground);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  :root {
+    --nav-font-size: clamp(1rem, 4.4vw, 1.125rem);
+    --nav-height: 48px;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 440px;
+    margin-inline: auto;
+    gap: 4px;
+    padding-inline: 12px;
+  }
+
+  .site-nav a {
+    display: flex;
+    min-width: 48px;
+    min-height: var(--nav-height);
+    padding-inline: 4px;
+    align-items: center;
+    justify-content: center;
+  }
+
   .theme-toggle {
     position: fixed;
     top: auto;
-    bottom: 24px;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
   }
 }
 
