@@ -126,11 +126,7 @@ body {
   }
 
   .site-nav {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    max-width: 440px;
-    margin-inline: auto;
-    gap: 4px;
+    gap: 12px;
     padding-inline: 12px;
   }
 

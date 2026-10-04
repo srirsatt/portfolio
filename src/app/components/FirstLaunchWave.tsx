@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 const CHARACTERS = "@#$?!abc;:+*=-,.`";
-const DURATION = 1800;
+const DURATION = 3000;
 const WAVE_COLORS = ["#c65f43", "#c99a36", "#76985c", "#4c94a6", "#9873aa"];
 const DARK_WAVE_COLORS = ["#df896d", "#d8b45c", "#9fbb84", "#80b8c8", "#b69acb"];
 
