@@ -62,6 +62,22 @@ const builds = [
     ],
   },
   {
+    name: "Paper Recreations",
+    href: "https://github.com/srirsatt/paper_recreations",
+    image: "/images/transformer-architecture.png",
+    imageDark: "/images/transformer-architecture-dark.png",
+    imageAlt: "The original Transformer encoder–decoder architecture from Figure 1 of Attention Is All You Need, showing attention layers, feed-forward networks, and positional encodings.",
+    imageAspectRatio: "1 / 1",
+    description: "Machine learning paper implementations in PyTorch, including a GPT-style, character-level Transformer trained on Tiny Shakespeare and experiments with LoRA adapters.",
+    stack: [
+      { icon: SiPython, label: "Python", color: "#3776ab" },
+      { icon: SiPytorch, label: "PyTorch", color: "#ee4c2c" },
+    ],
+    links: [
+      { label: "Diagram: Vaswani et al., 2017", href: "https://arxiv.org/html/1706.03762v7#S3.F1" },
+    ],
+  },
+  {
     name: "jev-uicheck-fast",
     href: "https://github.com/srirsatt/jev-uicheck-fast",
     image: "/images/jev-uicheck-diff.svg",
@@ -149,7 +165,11 @@ export default function Builds() {
               <a className="build-media" style={{ aspectRatio: build.imageAspectRatio }} href={build.href} target="_blank" rel="noreferrer" aria-label={`View ${build.name}`}>
                 {/* The project-owned repository assets are intentionally kept animated where available. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={build.image} alt={build.imageAlt} />
+                <img className={build.imageDark ? "build-image-light" : undefined} src={build.image} alt={build.imageAlt} />
+                {build.imageDark && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="build-image-dark" src={build.imageDark} alt={build.imageAlt} />
+                )}
               </a>
 
               <div className="build-details">

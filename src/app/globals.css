@@ -306,6 +306,15 @@ body {
   pointer-events: none;
 }
 
+.build-media .build-image-dark,
+:root[data-theme="dark"] .build-media .build-image-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .build-media .build-image-dark {
+  display: block;
+}
+
 .build-media:hover img {
   transform: scale(1.02);
 }
