@@ -16,7 +16,7 @@ const benchmarks = [
 
 export default function JevUIChecks() {
   return (
-    <main className="builds-page">
+    <main className="builds-page blog-post">
       <article className="mx-auto w-full max-w-2xl">
         <Link href="/blog" className="builds-back">← back</Link>
         <header className="mb-8">

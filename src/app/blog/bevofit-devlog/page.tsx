@@ -2,14 +2,11 @@ import Link from "next/link";
 
 export default function HelloWorld() {
     return (
-        <div className="min-h-screen flex flex-col items-center px-8 sm:px-12 border-box">
-            {/* Top spacer: grows to center content, but never shrinks below 20vh */}
-            <div className="grow min-h-[15vh] sm:min-h-[15vh]"></div>
-
-            <div className="relative w-full max-w-md text-left shrink-0 my-8">
+        <main className="builds-page blog-post">
+            <div className="mx-auto w-full max-w-md text-left">
                 <Link
                     href="/blog"
-                    className="absolute -top-12 left-0 font-[var(--font-space-mono)] text-sm text-gray-400 hover:text-black transition-colors"
+                    className="builds-back"
                 >
                     ← back
                 </Link>
@@ -51,8 +48,6 @@ export default function HelloWorld() {
                 </div>
             </div>
 
-            {/* Bottom spacer balances the top one so it's vertically centered when short */}
-            <div className="grow min-h-[10vh] sm:min-h-[10vh]"></div>
-        </div>
+        </main>
     );
 }
