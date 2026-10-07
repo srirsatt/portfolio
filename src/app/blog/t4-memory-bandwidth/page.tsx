@@ -84,16 +84,16 @@ export default function T4MemoryBandwidth() {
 
           <h2>What surprised me</h2>
           <p>
-            <strong>1. Paper bandwidth isn&apos;t real bandwidth.</strong> The best I could get was 77% of the spec. GDDR6 never hits its theoretical number, and the T4&apos;s 70 W power cap holds it back further. So my real ceiling for this GPU is about 245 GB/s, not 320.
+            <strong>1. Paper bandwidth isn&apos;t real bandwidth. </strong> The best I could get was 77% of the spec. GDDR6 never hits its theoretical number, and the T4&apos;s 70 W power cap holds it back further. So my real ceiling for this GPU is about 245 GB/s, not 320.
           </p>
           <p>
-            <strong>2. My naive kernel beat NVIDIA&apos;s <code>cudaMemcpy</code>.</strong> One thread per element, about a million blocks, 6% faster than the library call. <code>cudaMemcpy</code> has to handle any size and alignment; a dumb kernel with lots of parallelism doesn&apos;t.
+            <strong>2. My naive kernel beat NVIDIA&apos;s <code>cudaMemcpy</code>.</strong> One thread per element, about a million blocks, 6% faster than the library call. <code>cudaMemcpy </code> has to handle any size and alignment; a dumb kernel with lots of parallelism doesn&apos;t.
           </p>
           <p>
-            <strong>3. Vectorizing made it slower.</strong> The standard advice is &quot;use <code>float4</code> loads&quot;: fewer instructions for the same bytes. Here it was consistently about 5% slower than scalar. I swapped the run order to rule out clock throttling, and the gap held. I don&apos;t know why yet. That&apos;s tomorrow&apos;s job in Nsight Compute.
+            <strong>3. Vectorizing made it slower.</strong> The standard advice is &quot;use <code>float4 </code> loads&quot;: fewer instructions for the same bytes. Here it was consistently about 5% slower than scalar. I swapped the run order to rule out clock throttling, and the gap held. I don&apos;t know why yet. That&apos;s tomorrow&apos;s job in Nsight Compute.
           </p>
           <p>
-            <strong>4. You need fewer threads than I thought.</strong> I swept the grid-stride version from 1 to 32 blocks per SM, expecting low block counts to starve memory. Instead, 1 block per SM (about 10K threads) already hit 236 GB/s. The math (Little&apos;s law): to sustain about 240 GB/s with about 600 ns of memory latency, you need about 150 KB of loads in flight. 10,240 threads × 16 bytes ≈ 164 KB. Already enough. On an H100, with about 10× the bandwidth, that won&apos;t be true, and I want to rerun this sweep there later.
+            <strong>4. You need fewer threads than I thought. </strong> I swept the grid-stride version from 1 to 32 blocks per SM, expecting low block counts to starve memory. Instead, 1 block per SM (about 10K threads) already hit 236 GB/s. The math (Little&apos;s law): to sustain about 240 GB/s with about 600 ns of memory latency, you need about 150 KB of loads in flight. 10,240 threads × 16 bytes ≈ 164 KB. Already enough. On an H100, with about 10× the bandwidth, that won&apos;t be true, and I want to rerun this sweep there later.
           </p>
 
           <h2>The bug of the day</h2>
@@ -108,7 +108,7 @@ export default function T4MemoryBandwidth() {
             <li>Build the full roofline sheet for the T4</li>
           </ul>
           <p className="text-[var(--foreground)]">
-            Code: <a href="https://github.com/srirsatt/CUDAinference" className="underline underline-offset-4 hover:opacity-60">CUDAinference</a>
+            <a href="https://github.com/srirsatt/CUDAinference" className="underline underline-offset-4 hover:opacity-60">[Code]</a>
           </p>
         </div>
       </article>

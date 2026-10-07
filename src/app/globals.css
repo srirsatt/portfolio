@@ -76,6 +76,7 @@ body {
 }
 
 .site-nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,6 +85,38 @@ body {
   font-size: var(--nav-font-size);
   font-weight: 400;
   line-height: 1.4;
+}
+
+.site-nav a span {
+  display: inline-block;
+}
+
+.site-nav-highlight {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: inherit;
+  padding-inline: inherit;
+  color: var(--foreground);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-nav[data-highlight-ready] .site-nav-highlight {
+  visibility: visible;
+  transition: clip-path 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-nav[data-highlight-ready] a[aria-current="page"]:not(:hover):not(:focus-visible) {
+  color: var(--nav-inactive);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav[data-highlight-ready] .site-nav-highlight {
+    transition: none;
+  }
 }
 
 .site-nav a {
@@ -97,6 +130,10 @@ body {
 .site-nav a:focus-visible,
 .site-nav a[aria-current="page"] {
   color: var(--foreground);
+}
+
+.site-nav a:hover:not([aria-current="page"]):not(:focus-visible) {
+  color: color-mix(in srgb, var(--foreground) 75%, var(--nav-inactive));
 }
 
 .theme-toggle {
@@ -136,7 +173,8 @@ body {
     padding-inline: 12px;
   }
 
-  .site-nav a {
+  .site-nav a,
+  .site-nav-highlight > span {
     display: flex;
     min-width: 48px;
     min-height: var(--nav-height);
