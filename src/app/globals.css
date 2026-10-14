@@ -269,18 +269,37 @@ body {
   margin: 0 auto;
 }
 
+.blog-title-row {
+  position: relative;
+  padding-left: 44px;
+}
+
 .builds-back {
-  display: block;
-  width: fit-content;
-  margin-bottom: 1.5rem;
-  color: var(--subtle);
-  font-size: 0.8rem;
-  transition: color 150ms ease;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--foreground);
+  transition: opacity 150ms ease;
 }
 
 .builds-back:hover,
 .builds-back:focus-visible {
-  color: var(--foreground);
+  opacity: 0.65;
+}
+
+@media (min-width: 768px) {
+  .blog-title-row {
+    padding-left: 0;
+  }
+
+  .blog-title-row .builds-back {
+    left: -48px;
+  }
 }
 
 .builds-title {

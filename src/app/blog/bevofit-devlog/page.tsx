@@ -1,16 +1,13 @@
-import Link from "next/link";
+import BackButton from "../../components/BackButton";
 
 export default function HelloWorld() {
     return (
         <main className="builds-page blog-post">
             <div className="mx-auto w-full max-w-md text-left">
-                <Link
-                    href="/blog"
-                    className="builds-back"
-                >
-                    ← back
-                </Link>
-                <h1 className="font-[var(--font-space-mono)] font-bold text-lg mb-1">bevofit - devlog 1</h1>
+                <div className="blog-title-row mb-1">
+                    <BackButton />
+                    <h1 className="font-[var(--font-space-mono)] font-bold text-lg">bevofit - devlog 1</h1>
+                </div>
                 <h2 className="font-[var(--font-space-mono)] font-medium text-sm text-gray-400 mb-8">mon, apr 20th</h2>
                 <div className="space-y-6 font-[var(--font-space-mono)] text-sm text-gray-500 leading-relaxed">
                     {/* <h1 className="font-[var(--font-space-mono)] font-semibold text-lg mb-3 text-gray-700">title</h1> */}

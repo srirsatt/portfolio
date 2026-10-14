@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import BackButton from "../../components/BackButton";
 
 export const metadata: Metadata = {
   title: "UI Checks with Jev and Playwright | Sriram Sattiraju",
@@ -18,9 +18,11 @@ export default function JevUIChecks() {
   return (
     <main className="builds-page blog-post">
       <article className="mx-auto w-full max-w-2xl">
-        <Link href="/blog" className="builds-back">← back</Link>
         <header className="mb-8">
-          <h1 className="text-lg font-bold leading-relaxed">UI Checks with Jev and Playwright</h1>
+          <div className="blog-title-row">
+            <BackButton />
+            <h1 className="text-lg font-bold leading-relaxed">UI Checks with Jev and Playwright</h1>
+          </div>
           <time dateTime="2026-10-03" className="mt-2 block text-sm text-[var(--subtle)]">
             Oct 3, 2026
           </time>

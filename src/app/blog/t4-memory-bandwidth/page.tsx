@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import BackButton from "../../components/BackButton";
 
 export const metadata: Metadata = {
   title: "Day 1: How fast can a T4 actually move memory? | Sriram Sattiraju",
@@ -10,9 +10,11 @@ export default function T4MemoryBandwidth() {
   return (
     <main className="builds-page blog-post">
       <article className="mx-auto w-full max-w-2xl">
-        <Link href="/blog" className="builds-back">← back</Link>
         <header className="mb-8">
-          <h1 className="text-lg font-bold leading-relaxed">Day 1: How fast can a T4 actually move memory?</h1>
+          <div className="blog-title-row">
+            <BackButton />
+            <h1 className="text-lg font-bold leading-relaxed">Day 1: How fast can a T4 actually move memory?</h1>
+          </div>
           <time dateTime="2026-10-06" className="mt-2 block text-sm text-[var(--subtle)]">
             Oct 6, 2026
           </time>
