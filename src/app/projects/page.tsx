@@ -89,6 +89,20 @@ const builds = [
     ],
   },
   {
+    name: "Identifying Effective Strategies in Prompt Evolution for Stress and Emotion Prediction",
+    href: "https://arxiv.org/abs/2610.21407v1",
+    image: "/images/gepa-evolution.svg",
+    imageAlt: "GEPA prompt evolution trees for stress and emotion prediction, with golden routes highlighted in amber and development scores plotted below.",
+    imageAspectRatio: "492 / 472",
+    description: "A study of six prompting methods using Qwen3-8B and Qwen3-32B for stress and emotion prediction on Dreaddit and GoEmotions, tracing how GEPA revisions and merges evolve instructions and identifying five strategies associated with development gains.",
+    stack: [
+      { icon: SiPython, label: "Python", color: "#3776ab" },
+    ],
+    links: [
+      { label: "Paper", href: "https://arxiv.org/abs/2610.21407v1" },
+    ],
+  },
+  {
     name: "Cognitive Energy Modeling",
     links: [
       { label: "Paper", href: "https://arxiv.org/abs/2604.01653" },
