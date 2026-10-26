@@ -73,12 +73,12 @@ export default function JevUIChecks() {
             So Jev’s judgments stay advisory. The project also has Claude Code and Codex hook adapters that capture before a task and check when the agent tries to finish. Confirmed browser errors can request up to three repairs. Those adapters have browser integration tests; live agent sessions still need validation.
           </p>
           <p>
-            I’d like to add click-and-check scenarios next, then try a wider set of real apps. Lowk, getting useful feedback on an agent’s UI edits with this little overhead feels promising 😸.
+            I’d like to add click-and-check scenarios next, then try a wider set of real apps. Honestly, getting useful feedback on an agent’s UI edits with this little overhead feels promising.
           </p>
           <p className="text-[var(--foreground)]">
-            <a href="https://github.com/srirsatt/jev-uicheck" className="underline underline-offset-4 hover:opacity-60">Code</a>
+            <a href="https://github.com/srirsatt/jev-uicheck" className="underline underline-offset-4 hover:opacity-60">[Code]</a>
             {" · "}
-            <a href="https://github.com/srirsatt/jev-uicheck/blob/main/benchmarks/RESULTS.md" className="underline underline-offset-4 hover:opacity-60">Benchmark details</a>
+            <a href="https://github.com/srirsatt/jev-uicheck/blob/main/benchmarks/RESULTS.md" className="underline underline-offset-4 hover:opacity-60">[Benchmark Details]</a>
           </p>
         </div>
       </article>
