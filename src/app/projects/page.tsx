@@ -57,6 +57,7 @@ const builds = [
     name: "TinyCUDATensor",
     href: "https://github.com/srirsatt/TinyCUDATensor",
     image: "/images/tinycudatensor-wireframe.svg",
+    imageDark: "/images/tinycudatensor-wireframe-dark.svg",
     imageAlt: "Simple wireframe of TinyCUDATensor: input tensors A and B pass through tiled matrix multiplication and sum to produce a loss; backward propagates gradients back to the inputs.",
     description: "A tensor library built from scratch in CUDA C++, with a PyTorch-style autograd engine and both naive and tiled shared-memory matmul kernels.",
     stack: [
@@ -84,6 +85,7 @@ const builds = [
     name: "jev-uicheck-fast",
     href: "https://github.com/srirsatt/jev-uicheck-fast",
     image: "/images/jev-uicheck-diff.svg",
+    imageDark: "/images/jev-uicheck-diff-dark.svg",
     imageAlt: "Before-and-after login form wireframes show a button changing from Log in to Sign in. The accessibility diff and original prompt feed Jev advisory checks for intent, unexpected changes, and regressions.",
     description: "A UI-checking tool for coding agents that combines Playwright browser health checks with Jev evaluations of before-and-after accessibility diffs. Available as a CLI, library, and automatic Claude Code or Codex hook.",
     stack: [
@@ -140,7 +142,7 @@ const builds = [
     ],
   },
   {
-    name: "sudo story scraper",
+    name: "zero2sudo Story Scraper",
     href: "https://github.com/srirsatt/sudo_scraper",
     image: "/images/sudo-scraper-pipeline.svg",
     imageDark: "/images/sudo-scraper-pipeline-dark.svg",
