@@ -56,7 +56,7 @@ export default function SiteNav() {
           }
         }}
       >
-        {isDark ? <FiSun size={17} aria-hidden="true" /> : <FiMoon size={17} aria-hidden="true" />}
+        {isDark ? <FiSun size="1em" aria-hidden="true" /> : <FiMoon size="1em" aria-hidden="true" />}
       </button>
     </header>
   );

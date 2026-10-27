@@ -75,16 +75,20 @@ body {
   background: var(--background);
 }
 
+.site-nav,
+.theme-toggle {
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: var(--nav-font-size);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
 .site-nav {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  font-family: var(--font-ibm-plex-mono), monospace;
-  font-size: var(--nav-font-size);
-  font-weight: 400;
-  line-height: 1.4;
 }
 
 .site-nav a span {
@@ -116,18 +120,25 @@ body {
 
 .theme-toggle {
   position: absolute;
-  top: calc(var(--nav-top) + var(--nav-height) / 2 - 16px);
+  top: var(--nav-top);
   right: clamp(16px, 3vw, 40px);
-  display: grid;
+  display: block;
   width: 32px;
-  height: 32px;
-  place-items: center;
-  color: var(--subtle);
-  background: var(--background);
+  height: var(--nav-height);
+  padding: 0;
+  line-height: var(--nav-height);
+  text-align: center;
+  color: color-mix(in srgb, var(--nav-inactive) 80%, var(--background));
+  background: transparent;
   border: 0;
-  border-radius: 50%;
   cursor: pointer;
   transition: color 150ms ease;
+}
+
+.theme-toggle svg {
+  display: inline-block;
+  /* Center on the capital letters, rather than the surrounding line box. */
+  vertical-align: calc((1cap - 1em) / 2);
 }
 
 .theme-toggle:hover,
@@ -160,11 +171,14 @@ body {
   }
 
   .theme-toggle {
-    position: fixed;
-    top: auto;
-    bottom: max(24px, env(safe-area-inset-bottom));
     width: 44px;
-    height: 44px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-nav {
+    justify-content: flex-start;
+    padding-inline: 16px;
   }
 }
 
