@@ -15,8 +15,8 @@
   --subtle: #7d8592;
   --nav-inactive: #94949a;
   color-scheme: light;
-  --nav-top: clamp(24px, 5svh, 48px);
-  --nav-font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  --nav-top: clamp(16px, 3svh, 28px);
+  --nav-font-size: 1rem;
   --nav-height: calc(var(--nav-font-size) * 1.4);
   --content-top: calc(var(--nav-top) + var(--nav-height) + 2rem);
   --font-space-mono: var(--font-ibm-plex-mono);
@@ -80,7 +80,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(20px, 3vw, 32px);
+  gap: 16px;
   font-family: var(--font-ibm-plex-mono), monospace;
   font-size: var(--nav-font-size);
   font-weight: 400;
@@ -91,39 +91,17 @@ body {
   display: inline-block;
 }
 
-.site-nav-highlight {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: inherit;
-  padding-inline: inherit;
-  color: var(--foreground);
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.site-nav[data-highlight-ready] .site-nav-highlight {
-  visibility: visible;
-  transition: clip-path 260ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.site-nav[data-highlight-ready] a[aria-current="page"]:not(:hover):not(:focus-visible) {
-  color: var(--nav-inactive);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .site-nav[data-highlight-ready] .site-nav-highlight {
-    transition: none;
-  }
-}
-
 .site-nav a {
   display: block;
   color: var(--nav-inactive);
   text-decoration: none;
-  transition: color 150ms ease;
+  transition: color 240ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav a {
+    transition: none;
+  }
 }
 
 .site-nav a:hover,
@@ -164,17 +142,15 @@ body {
 
 @media (max-width: 640px) {
   :root {
-    --nav-font-size: clamp(1rem, 4.4vw, 1.125rem);
     --nav-height: 48px;
   }
 
   .site-nav {
-    gap: 12px;
+    gap: 8px;
     padding-inline: 12px;
   }
 
-  .site-nav a,
-  .site-nav-highlight > span {
+  .site-nav a {
     display: flex;
     min-width: 48px;
     min-height: var(--nav-height);
