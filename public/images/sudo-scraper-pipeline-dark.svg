@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">sudo story scraper internship pipeline</title>
+  <desc id="description">Instagram stories are classified locally by Qwen3-VL through Ollama. Matches become Telegram internship alerts; uncertain results are held for an Approve or Skip review.</desc>
+  <rect width="960" height="540" fill="#141414"/>
+  <g stroke="#ededeb" stroke-width="2" stroke-linejoin="miter">
+    <rect x="48" y="168" width="228" height="120"/>
+    <rect x="366" y="168" width="228" height="120"/>
+    <rect x="684" y="168" width="228" height="120"/>
+    <path d="M276 228H350M340 222L350 228L340 234"/>
+    <path d="M594 228H668M658 222L668 228L658 234"/>
+    <rect x="350" y="364" width="260" height="88"/>
+    <path d="M610 408H798V304M792 314L798 304L804 314"/>
+  </g>
+  <g stroke="#707078" stroke-width="2">
+    <path d="M480 288V312M480 344V352M474 342L480 352L486 342"/>
+  </g>
+  <g fill="#ededeb" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" text-anchor="middle">
+    <g font-size="28">
+      <text x="162" y="217">Instagram</text>
+      <text x="480" y="217">Qwen3-VL</text>
+      <text x="798" y="217">Telegram</text>
+      <text x="480" y="418" font-size="26">Approve / Skip</text>
+    </g>
+    <g fill="#a0a0a5" font-size="23">
+      <text x="162" y="253">stories + links</text>
+      <text x="480" y="253">local inference</text>
+      <text x="798" y="253">job alerts</text>
+    </g>
+    <g fill="#a0a0a5" font-size="20">
+      <text x="480" y="133">Ollama</text>
+      <text x="639" y="207">matches</text>
+      <text x="480" y="334">uncertain</text>
+      <text x="704" y="440">approved</text>
+    </g>
+  </g>
+</svg>
