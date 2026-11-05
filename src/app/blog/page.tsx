@@ -6,6 +6,19 @@ export default function Blog() {
       <div className="builds-shell">
         <h1 className="sr-only">Blog</h1>
         <article className="mx-auto mb-10 max-w-2xl">
+          <time dateTime="2026-11-05" className="text-xs text-[var(--subtle)]">
+            Nov 5, 2026
+          </time>
+          <h2 className="mt-2 text-sm">
+            <Link href="/blog/sudo-scraper" className="underline underline-offset-4 transition-opacity hover:opacity-60">
+              Internship links without Instagram
+            </Link>
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+            I wanted to get off Instagram without missing zero2sudo’s internship posts, so I built a local pipeline that brings the links to Telegram.
+          </p>
+        </article>
+        <article className="mx-auto mb-10 max-w-2xl">
           <time dateTime="2026-10-06" className="text-xs text-[var(--subtle)]">
             Oct 6, 2026
           </time>
