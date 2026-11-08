@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaGoogleScholar, FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import FirstLaunchWave from "./components/FirstLaunchWave";
 
@@ -14,6 +14,7 @@ const socials = [
   { icon: FaLinkedin, href: "https://www.linkedin.com/in/sriram-sattiraju-4a4514150/", label: "sriram-sattiraju", name: "LinkedIn" },
   { icon: FaXTwitter, href: "https://x.com/SattirajuSriram", label: "@SattirajuSriram", name: "X" },
   { icon: MdEmail, href: "mailto:srirams@cs.utexas.edu", label: "srirams@cs.utexas.edu", name: "Email" },
+  { icon: FaGoogleScholar, href: "https://scholar.google.com/citations?user=AZf9PRMAAAAJ&hl=en", label: "Google Scholar", name: "Google Scholar" },
 ];
 
 function useScramble() {
